@@ -1,5 +1,5 @@
 {% set name = "tilematrix" %}
-{% set version = "2022.11.1" %}
+{% set version = "2022.11.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/tilematrix-{{ version }}.tar.gz
-  sha256: 535fc1a9d8cfc0aa235e661dfccd15ae4140c83411269706164384da8fc0725d
+  sha256: b70960ccbd209b0ff0ca14199a7f7c721f1705ee13d4e998a07eca825fde56f5
 
 build:
   entry_points:
