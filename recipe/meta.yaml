@@ -21,6 +21,7 @@ requirements:
     - python >=3.6
     - pytest-runner
     - pip
+    - hatchling
   run:
     - python >=3.6
     - affine
