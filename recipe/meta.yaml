@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/tilematrix-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/tilematrix-{{ version }}.tar.gz
   sha256: f54150c6e44dc4f3daba488a0f46abf9b4b656b1c1bacfb2f69c83978f587dc9
 
 build:
@@ -14,16 +14,16 @@ build:
     - tmx=tilematrix.tmx.main:tmx
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - pytest-runner
     - pip
     - hatchling
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - affine
     - click
     - geojson
@@ -38,6 +38,7 @@ test:
     - tmx --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/ungarj/tilematrix
